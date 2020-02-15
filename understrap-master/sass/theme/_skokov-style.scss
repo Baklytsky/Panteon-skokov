@@ -1,0 +1,1200 @@
+@import "mixins";
+@import "theme_variables";
+.attachment-large {
+  width: 100%;
+}
+.post {
+  margin-top: 50px;
+}
+.entry-header {
+  background-color: $yellow;
+  .entry-title, .entry-meta {
+	padding: 10px;
+  }
+  h2 a {
+	color: $black;
+  }
+  .posted-on {
+	a {
+	  color: $black;
+	}
+  }
+}
+.cat-links a, .tags-links a, .post-edit-link, .comments-link a, .author a {
+  font-weight: 700;
+  color: $black;
+  text-transform: uppercase;
+  transition: all .3s linear;
+  &:hover {
+	color: $youtube;
+  }
+  &:before, &:after {
+	content: " / ";
+  }
+}
+/*--------------------------------------------------------------------------------------------------------
+---------------------------------------------HOME---------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+
+.section-slider {
+  width: 100%;
+  background: url("../img/slider.jpg") no-repeat center / cover;
+  padding: 3% 0;
+  position: relative;
+
+  .indicators-type {
+    .active {
+      border: 3px solid $color;
+      background-color: $yellow;
+    }
+
+    li {
+      width: 15px;
+      height: 15px;
+      border: 3px solid $color;
+      background-color: $color;
+    }
+  }
+
+  h2 span {
+    @include slider-headline;
+  }
+
+  p span {
+    @include slider-title;
+  }
+  .control-type {
+    width: 5%;
+    height: 10%;
+    opacity: 1;
+    background-color: $black;
+    position: absolute;
+    top: 40%;
+    overflow: hidden;
+
+    &:hover {
+      -webkit-filter: invert(0.8);
+      filter: invert(0.8);
+    }
+  }
+}
+
+.section-slider {
+  .btn {
+    @include btn;
+    transition: all .3s linear;
+
+    &:hover {
+      color: $yellow;
+      border-bottom: 2px solid $yellow;
+    }
+  }
+}
+
+.development {
+  background-color: $cream;
+  padding: 5% 0 10%;
+  position: relative;
+  .design-headline {
+    @include design-headline;
+  }
+  .design-text {
+    @include design-text;
+  }
+}
+
+.layer-one {
+  width: 100%;
+  height: 100%;
+  background-color: $yellow;
+  padding: 10% 5% 5%;
+  position: relative;
+
+  .icon-design {
+    @include icon-design;
+  }
+}
+
+.layer-two {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: 0.8s linear;
+  -o-transition: 0.8s linear;
+  transition: 0.8s linear;
+  opacity: 0;
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+    border: 10px solid transparent;
+    border-bottom: 10px solid $color;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.card {
+  .layer-one h3 {
+    font-size: $small;
+  }
+  .card-body p, .title-card {
+    font-size: $smaller;
+	line-height: normal;
+  }
+  .title-card {
+	width: 80%;
+  }
+}
+
+.card {
+  .body-bg {
+    background-color: $color;
+  }
+  .layer-one-text {
+    position: relative;
+	p a {
+	  display: none;
+	}
+  }
+  .layer-two-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: 0.8s linear;
+    -o-transition: 0.8s linear;
+    transition: 0.8s linear;
+    opacity: 0;
+	 .card-link {
+      font-size: 0.4em;
+      color: $yellow;
+		white-space: nowrap;
+    }
+  }
+}
+
+.card {
+  &:hover .layer-two {
+    opacity: 1;
+  }
+  &:hover .layer-two-text {
+    opacity: 1;
+  }
+}
+
+.work {
+  .work-headline {
+    @include section-btn;
+    position: relative;
+    &:before {
+      @include before-btn;
+      width: calc(50vw - 130px);
+    }
+    &:after {
+      @include after-btn;
+      width: calc(50vw - 130px);
+    }
+  }
+}
+
+.work {
+  background-color: $cream;
+  .grid {
+    padding: 5% 0 10%;
+    .grid-sizer, .grid-item {
+      width: 100%;
+    }
+    .gutter-sizer {
+      width: 0;
+    }
+    .grid-item img {
+      width: 100%;
+    }
+  }
+}
+
+.clients {
+  background-color: $cream;
+  padding-bottom: 5%;
+  position: relative;
+  .clients-headline {
+    @include section-btn;
+    position: absolute;
+    &:before {
+      @include before-btn;
+      width: calc(50vw - 140px);
+    }
+    &:after {
+      @include after-btn;
+      width: calc(50vw - 140px);
+    }
+  }
+  .control-type-mini {
+    width: 5%;
+    height: 50%;
+    opacity: 1;
+    background-color: $black;
+    position: absolute;
+    top: 20%;
+    overflow: hidden;
+  }
+}
+
+.icon-custom {
+  @include slider-style;
+}
+#carouselExample {
+  .carousel-inner .carousel-item.active,
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
+    display: flex;
+  }
+  .carousel-inner .carousel-item-right.active,
+  .carousel-inner .carousel-item-next {
+    transform: translateX(100%);
+  }
+
+  .carousel-inner .carousel-item-left.active,
+  .carousel-inner .carousel-item-prev {
+    transform: translateX(-100%);
+  }
+  .carousel-inner .carousel-item-right,
+  .carousel-inner .carousel-item-left{
+    transform: translateX(0);
+  }
+  a {
+    transition: all .3s linear;
+    &:hover {
+      -webkit-filter: invert(0.8);
+      filter: invert(0.8);
+    }
+  }
+}
+
+/*--------------------------------------------------------------------------------------------------------
+---------------------------------------------PORTFOLIO----------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+
+.section-headline {
+  width: 100%;
+  background: url("../img/img-portfolio/slider_bg.jpg") no-repeat center / cover;
+  padding: 5% 0;
+  h2 .headline {
+    font-size: $smaller;
+    color: $yellow;
+    background-color: $color;
+    padding: 15px 100px 15px 15px;
+  }
+}
+.portfolio {
+  background-color: $cream;
+  padding: 4% 0;
+
+  .hide {
+    display: none;
+  }
+
+  .portfolio-headline {
+    @include design-headline;
+  }
+
+  .portfolio-title {
+    @include design-text;
+  }
+
+  .filters {
+    .btn-filter {
+      font-size: $smaller;
+      font-weight: 600;
+      color: $color;
+      border: none;
+      background-color: transparent;
+      padding: 2px 4px;
+      margin: 1px;
+
+      &:active, &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        background-color: $yellow;
+      }
+    }
+
+    .is-checked {
+      background-color: $yellow;
+      border: none;
+    }
+  }
+}
+
+.portfolio-list {
+  padding: 2% 0;
+
+  .portfolio-item {
+    border: 10px solid $cream;
+    border-bottom: 50px solid $cream;
+    .photo {
+      width: 100%;
+    }
+    .portfolio-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $yellow;
+      -webkit-transition: 0.8s linear;
+      -o-transition: 0.8s linear;
+      transition: 0.8s linear;
+      opacity: 0;
+
+      .arrow {
+        width: 50%;
+        -webkit-transition: 0.2s linear;
+        -o-transition: 0.2s linear;
+        transition: 0.2s linear;
+        opacity: 0.7;
+        &:hover {
+          opacity: 1;
+        }
+
+        .icon-arrow {
+          font-size: $icon-arrow;
+          color: $white;
+          background-color: $color;
+          padding: 30px;
+        }
+      }
+    }
+    &:hover .portfolio-layer {
+      opacity: 0.7;
+    }
+  }
+}
+
+/*--------------------------------------------------------------------------------------------------------
+---------------------------------------------PROJECT------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+
+.section-headline-project {
+  width: 100%;
+  background: url("../img/img-portfolio/slider_bg.jpg") no-repeat center / cover;
+  padding: 5% 0;
+  h2 .headline {
+    font-size: $smaller;
+    color: $yellow;
+    background-color: $color;
+    padding: 15px 166px 15px 15px;
+  }
+}
+
+.projects {
+  padding-top: 5%;
+  background-color: $cream;
+  .project-gallery {
+    #myCarousel {
+      .list-inline {
+        white-space:nowrap;
+        overflow-x:auto;
+      }
+      .carousel-indicators {
+        position: static;
+        left: initial;
+        width: initial;
+        margin-left: initial;
+        .active {
+          background-color: $yellow;
+        }
+      }
+      .carousel-indicators > li {
+        width: initial;
+        height: initial;
+        text-indent: initial;
+      }
+      .carousel-indicators > li.active img {
+        opacity: 0.7;
+      }
+      .carousel-style {
+        position: relative;
+        background-color: $color;
+      }
+      .indicators-style {
+        background-color: $black;
+      }
+      .control-type {
+        width: 5%;
+        height: 20%;
+        opacity: 1;
+        background-color: $black;
+        position: absolute;
+        top: 50%;
+        overflow: hidden;
+        .size {
+          font-size: $icon-arrow;
+        }
+        &:hover {
+          -webkit-filter: invert(0.8);
+          filter: invert(0.8);
+          color: $cream;
+        }
+      }
+      .fullscreen-icon {
+        color: $white;
+        position: absolute;
+        top: 2%;
+        right: 1%;
+        transition: all .3s linear;
+        &:hover {
+          color: $yellow;
+        }
+      }
+    }
+  }
+  .description {
+    padding: 5%;
+    .description-headline {
+      @include project-headline;
+    }
+    .description-text {
+      font-size: $small;
+      color: $color;
+    }
+    .border-text {
+      padding-bottom: 5%;
+      border-bottom: 2px solid $line;
+    }
+  }
+  .recent-project {
+    padding: 0 5% 5%;
+    .recent-project-headline {
+      @include project-headline;
+    }
+  }
+}
+
+/*--------------------------------------------------------------------------------------------------------
+---------------------------------------------BLOG---------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+
+.section-headline-blog {
+  width: 100%;
+  background: url("../img/img-portfolio/slider_bg.jpg") no-repeat center / cover;
+  padding: 2% 0;
+  h2 .headline {
+    font-size: $smaller;
+    color: $yellow;
+    background-color: $color;
+    padding: 15px 200px 15px 15px;
+  }
+}
+.blog {
+  background-color: $cream;
+  .blog-headline {
+    font-size: $small;
+    font-style: italic;
+    background-color: $yellow;
+    padding: 1% 13%;
+    cite {
+      font-size: $smaller;
+    }
+    .quote-link {
+      color: $black;
+      font-weight: 700;
+      transition: all .3s linear;
+      &:hover {
+        color: $google;
+      }
+    }
+  }
+  .grid {
+    .grid-sizer, .grid-item {
+      width: 100%;
+      border-bottom: 15px solid $cream;
+    }
+    .gutter-sizer {
+      width: 0;
+    }
+    .grid-item {
+      width: 100%;
+    }
+  }
+  .card-item {
+    border: none;
+  }
+  .footer-card-link {
+    color: $black;
+    transition: all .3s linear;
+    &:hover {
+      color: $google;
+    }
+  }
+  .news {
+    background-color: $yellow;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      top: -30px;
+      right: 10%;
+      border: 15px solid transparent;
+      border-bottom: 15px solid $yellow;
+    }
+    .news-headline {
+      font-size: $normal;
+      font-weight: 700;
+      .news-link {
+        color: $black;
+        transition: all .3s linear;
+        &:hover {
+          color: $google;
+        }
+      }
+    }
+    .news-text {
+      font-size: $smaller;
+      color: $card-text;
+    }
+    .card-heart {
+      font-size: $smaller;
+      color: $color;
+      transition: all .3s linear;
+      &:hover {
+        color: $google;
+      }
+    }
+    .footer-card-text {
+      font-size: $smaller;
+      font-weight: 700;
+    }
+  }
+  .page-style {
+    font-size: $smaller;
+    font-weight: 700;
+    color: $black;
+    padding: 5px;
+    background-color: $cream;
+    transition: all .3s linear;
+    &:hover {
+      background-color: $yellow;
+    }
+  }
+  .active-link {
+    background-color: $yellow;
+  }
+}
+/*--------------------------------------------------------------------------------------------------------
+---------------------------------------------SINGLE-POST--------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+#single-wrapper {
+  background-color: $cream;
+}
+.wp-block-image {
+  margin: 1em;
+}
+.comments-count, .comment-edit-link, .logged-in-as a  {
+  &:before, &:after {
+	content: " / ";
+  }
+}
+div.the_champ_sharing_container, div.the_champ_horizontal_sharing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  border-bottom: 1px solid $line;
+}
+.the_champ_sharing_title {
+  color: #ffea00;
+  font-family: "Century Gothic", sans-serif;
+  font-size: $small;
+  text-transform: uppercase;
+  background-color: $color;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+}
+div.the_champ_horizontal_sharing .the_champ_square_count {
+  margin: 0;
+}
+.theChampSharingRound {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.the_champ_square_count {
+  color: $black;
+  font-family: "Century Gothic", sans-serif;
+  text-transform: uppercase;
+  background-color: $yellow;
+  padding: 0 10px;
+  margin: 1px;
+}
+.has-text-color {
+  display: inline-block;
+  color: #ffea00;
+  font-family: "Century Gothic", sans-serif;
+  font-weight: 700;
+  font-size: $small;
+  text-transform: uppercase;
+  background-color: $color;
+  padding: 5px 10px;
+  margin: 20px 0;
+}
+.related-post-warp .related-post-block {
+  padding: 0;
+  border: none;
+  margin-top: 10px;
+}
+.related-post-warp .related-post-block a.related-post-title h3 {
+  font-family: "Century Gothic", sans-serif;
+  font-size: $smaller2;
+  font-weight: 700;
+  line-height: 17px;
+  text-transform: uppercase;
+  color: $black;
+  background-color: $yellow;
+  padding: 5px;
+  transition: all .3s linear;
+  &:hover {
+	color: $google;
+  }
+}
+.related-post-warp .related-post-block a.related-post-title {
+  padding: 0;
+  margin: 0;
+}
+.related-post-warp .related-posts-img {
+  position: relative;
+  &:before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	right: 10%;
+	border: 10px solid transparent;
+	border-bottom: 10px solid $yellow;
+  }
+}
+.related-post-warp, .logged-in-as {
+  padding-bottom: 50px;
+  border-bottom: 1px solid $line;
+}
+.fn {
+  font-weight: 700;
+  color: $black;
+  text-transform: uppercase;
+}
+.comments-title, #theChampReplyTitle, #theChampTabs-0-li, #theChampTabs-1-li, .required {
+  display: none;
+}
+.comment-metadata, .comment-content, .reply, .logged-in-as {
+  padding-left: 35px;
+}
+.comment-metadata a, .comment-reply-link, .comment-edit-link, .logged-in-as a {
+  font-size: $smaller;
+  font-weight: 700;
+  color: $black;
+  text-transform: uppercase;
+  transition: all .3s linear;
+  &:hover {
+	color: $google;
+  }
+}
+.comment-count-title {
+  display: inline-block;
+}
+.logged-in-as {
+
+}
+.form-group label, .comment-count-title {
+  font-weight: 700;
+  font-size: $small;
+  color: $yellow;
+  text-transform: uppercase;
+  background-color: #424146;
+  padding: 5px 10px;
+  margin: 20px 0;
+}
+.btn-secondary {
+  font-weight: 700;
+  font-size: $small;
+  color: $white;
+  background-color: $black;
+  border-radius: 0;
+  border-bottom: 2px solid $black;
+  padding: 5px 10px;
+  margin: 10px 0;
+  transition: all .3s linear;
+  &:hover {
+	color: $white;
+	border-bottom: 2px solid $yellow;
+	background-color: $black;
+  }
+}
+.form-submit {
+text-align: right;
+}
+.single-blog-wrapper {
+  img {
+	width: 100%;
+  }
+  .blog-text {
+    font-size: $smaller;
+    color: $color;
+    line-height: 2;
+  }
+  .share-post {
+    border-bottom: 2px solid $line;
+  }
+  .share-post-headline {
+    @include project-headline;
+  }
+  .share-icon {
+    @include icon-style;
+    font-size: $smaller;
+  }
+  .share-facebook {
+    transition: all .3s linear;
+    &:hover {
+      background-color: $facebook;
+    }
+  }
+  .share-google {
+    transition: all .3s linear;
+    &:hover {
+      background-color: $google;
+    }
+  }
+  .share-twitter {
+    transition: all .3s linear;
+    &:hover {
+      background-color: $twitter;
+    }
+  }
+  .share-linkedin {
+    transition: all .3s linear;
+    &:hover {
+      background-color: $linkedin;
+    }
+  }
+  .share-item {
+    font-size: $smaller;
+    background-color: $yellow;
+    padding: 5px 5px;
+  }
+  .related-post {
+    border-bottom: 2px solid $line;
+  }
+  .post {
+    min-height: 55px;
+  }
+  .news-headline-post {
+    font-size: $small;
+    font-weight: 700;
+
+    a {
+      color: $black;
+      transition: all .3s linear;
+
+      &:hover {
+        color: $google;
+      }
+    }
+  }
+  .comment-section {
+    border-bottom: 2px solid $line;
+  }
+  .comment {
+    padding-bottom: 40px;
+  }
+  .comment-avatar {
+    padding-top: 8px;
+    padding-right: 15px;
+  }
+  .comment-info {
+    font-size: $smaller;
+    font-weight: 700;
+    color: $black;
+    transition: all .3s linear;
+
+    &:hover {
+      color: $google;
+    }
+  }
+  .comment-form {
+    padding-bottom: 100px;
+  }
+  .comment-form-style {
+    width: 100%;
+    height: 50px;
+    border: none;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .form-comment {
+    width: 100%;
+    height: 170px;
+    border: none;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .comment-btn {
+    color: $white;
+    background-color: $black;
+    border: none;
+    border-bottom: 2px solid $black;
+    padding: 5px 10px;
+    margin-bottom: 30px;
+    transition: all .3s linear;
+
+    &:hover {
+      color: $yellow;
+      border-bottom: 2px solid $yellow;
+    }
+  }
+}
+/*--------------------------------------------------------------------------------------------------------
+---------------------------------------------ABOUT-US-----------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+.section-headline-about {
+  width: 100%;
+  background: url("../img/img-portfolio/slider_bg.jpg") no-repeat center / cover;
+  padding: 3% 0;
+  h2 .headline {
+    font-size: $smaller;
+    color: $yellow;
+    background-color: $color;
+    padding: 15px 120px 15px 15px;
+  }
+}
+.about {
+  background-color: $cream;
+  padding: 60px 0;
+  .about-headline {
+    font-size: $small;
+  }
+  .about-subtitle {
+    font-size: $smaller2;
+    font-weight: 700;
+  }
+  .about-text {
+    font-size: $smaller2;
+    font-weight: 400;
+  }
+}
+.skills {
+  background-color: $cream;
+
+  .skills-title {
+    @include section-btn;
+  }
+  .skills-text {
+    font-size: $small;
+  }
+  .statistics-photoshop {
+    @include statistics;
+    &:after {
+      @include percent;
+      width: calc(90% - 45px);
+    }
+  }
+  .percent {
+    font-size: $smaller;
+    color: $yellow;
+    background-color: $black;
+    padding: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .percent-item {
+    font-size: $small;
+    color: $color;
+    z-index: 1;
+    position: absolute;
+    top: 9px;
+    left: 55px;
+  }
+  .statistics-html {
+    @include statistics;
+    &:after {
+      @include percent;
+      width: calc(87% - 45px);
+    }
+  }
+  .statistics-Illustrator {
+    @include statistics;
+    &:after {
+      @include percent;
+      width: calc(80% - 45px);
+    }
+  }
+  .statistics-php {
+    @include statistics;
+    &:after {
+      @include percent;
+      width: calc(76% - 45px);
+    }
+  }
+  .statistics-wordpress {
+    @include statistics;
+    &:after {
+      @include percent;
+      width: calc(70% - 45px);
+    }
+  }
+  .statistics-joomla {
+    @include statistics;
+    &:after {
+      @include percent;
+      width: calc(65% - 45px);
+    }
+  }
+  .statistics-javascript {
+    @include statistics;
+    &:after {
+      @include percent;
+      width: calc(75% - 45px);
+    }
+  }
+  .statistics-mysql {
+    @include statistics;
+    &:after {
+      @include percent;
+      width: calc(85% - 45px);
+    }
+  }
+}
+.our-team {
+  background-color: $cream;
+
+  .team-title {
+    @include section-btn;
+  }
+  .team-text {
+    font-size: $small;
+  }
+
+  .professions {
+    @include professions;
+    transition: all .3s linear;
+    &:hover {
+      background-color: $black;
+    }
+  }
+
+  .web-designer {
+    &:after {
+      content: url("../img/img-about/photo_1.png");
+      @include circle-photo;
+    }
+    &:hover:after {
+      box-shadow: 0 0 8px 2px $black;
+    }
+  }
+
+  .web-designer-second {
+    &:after {
+      content: url("../img/img-about/photo_2.png");
+      @include circle-photo;
+    }
+    &:hover:after {
+      box-shadow: 0 0 8px 2px $black;
+    }
+  }
+  .front-end-developer {
+    &:after {
+      content: url("../img/img-about/photo_3.png");
+      @include circle-photo;
+    }
+    &:hover:after {
+      box-shadow: 0 0 8px 2px $black;
+    }
+  }
+  .web-developer {
+    &:after {
+      content: url("../img/img-about/photo_4.png");
+      @include circle-photo;
+    }
+    &:hover:after {
+      box-shadow: 0 0 8px 2px $black;
+    }
+  }
+  .web-developer-second {
+    &:after {
+      content: url("../img/img-about/photo_5.png");
+      @include circle-photo;
+    }
+    &:hover:after {
+      box-shadow: 0 0 8px 2px $black;
+    }
+  }
+  .markup-developer {
+    &:after {
+      content: url("../img/img-about/photo_6.png");
+      @include circle-photo;
+    }
+    &:hover:after {
+      box-shadow: 0 0 8px 2px $black;
+    }
+  }
+  .cms-master {
+    &:after {
+      content: url("../img/img-about/photo_7.png");
+      @include circle-photo;
+    }
+    &:hover:after {
+      box-shadow: 0 0 8px 2px $black;
+    }
+  }
+  .send-cv {
+    &:after {
+      content: url("../img/img-about/photo_8.png");
+      @include circle-photo;
+    }
+    &:hover:after {
+      box-shadow: 0 0 8px 2px $black;
+    }
+  }
+}
+/*--------------------------------------------------------------------------------------------------------
+---------------------------------------------CONTACT------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+.section-headline-contact {
+  width: 100%;
+  background: url("../img/img-portfolio/slider_bg.jpg") no-repeat center / cover;
+  padding: 3% 0;
+  h2 .headline {
+    font-size: $smaller;
+    color: $yellow;
+    background-color: $color;
+    padding: 15px 120px 15px 15px;
+  }
+}
+.contact {
+  background-color: $cream;
+}
+#map {
+  width: 100%;
+  height: 650px;
+}
+.message-form {
+  background-color: $cream;
+  .message-headline {
+    @include project-headline;
+  }
+  .message-form-style {
+    width: 100%;
+    height: 50px;
+    border: none;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .form-comment {
+    width: 100%;
+    height: 170px;
+    border: none;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .comment-btn {
+    color: $white;
+    background-color: $black;
+    border: none;
+    border-bottom: 2px solid $black;
+    padding: 5px 10px;
+    margin-bottom: 30px;
+    transition: all .3s linear;
+
+    &:hover {
+      color: $yellow;
+      border-bottom: 2px solid $yellow;
+    }
+  }
+  .address-list {
+    &:before {
+      content: "";
+      background-image: url("../img/adress.png");
+      @include list-icon;
+    }
+  }
+  .phone-list {
+    &:before {
+      content: "";
+      background-image: url("../img/phone.png");
+      @include list-icon;
+    }
+  }
+  .mail-list {
+    &:before {
+      content: "";
+      background-image: url("../img/email.png");
+      @include list-icon;
+    }
+  }
+  .contact-text {
+    @include footer-text;
+    font-weight: 700;
+    color: $color;
+  }
+  .mail-link {
+    @include footer-text;
+    font-weight: 700;
+    color: $yellow;
+    background-color: $color;
+    padding: 0 2px;
+  }
+}
+/*--------------------------------------------------------------------------------------------------------
+---------------------------------------------404----------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+.section-headline-404 {
+  width: 100%;
+  background: url("../img/img-portfolio/slider_bg.jpg") no-repeat center / cover;
+  padding: 3% 0;
+  h2 .headline {
+    font-size: $smaller;
+    color: $yellow;
+    background-color: $color;
+    padding: 15px 120px 15px 15px;
+  }
+}
+.error {
+  background-color: $cream;
+  padding: 10% 0 10%;
+  h1 {
+    font-size: $error-size;
+    line-height: 1;
+  }
+  .error-text {
+    font-size: $icon-arrow;
+    line-height: 0.7;
+    color: $yellow;
+    background-color: $color;
+    margin-bottom: 50px;
+    .bigger-text {
+      font-size: $icon-arrow;
+    }
+  }
+  .error-btn {
+    @include btn;
+    transition: all .3s linear;
+
+    &:hover {
+      color: $yellow;
+      border-bottom: 2px solid $yellow;
+    }
+  }
+  .btn-choice {
+    color: $black;
+    background-color: $yellow;
+    padding: 5px 5px 7px;
+  }
+}

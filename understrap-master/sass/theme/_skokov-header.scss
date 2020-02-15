@@ -1,0 +1,41 @@
+@import "mixins";
+@import "theme_variables";
+#header {
+  background-color: $cream;
+  padding: 1% 0;
+  .navbar-toggler {
+	&:active, &:focus {
+	  outline: none;
+	}
+  }
+
+  li {
+	margin: 0 5px;
+	a {
+	  @include menu-item;
+	  color: $color;
+	  &:hover {
+		background-color: $yellow;
+		color: $color;
+	  }
+	}
+	&:hover {
+	  background-color: $yellow;
+	}
+  }
+
+  .current-menu-item {
+	background-color: $yellow;
+  }
+
+  .icon-three-bars {
+	color: $color;
+	font-size: $big;
+  }
+}
+
+.indent {
+  padding: 0;
+  margin: 0;
+}
+

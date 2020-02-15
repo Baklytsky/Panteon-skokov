@@ -1,0 +1,150 @@
+@import "mixins";
+@import "theme_variables";
+aside {
+  .sidebar-item {
+    background-color: $color;
+    padding: 30px 10px 20px 30px;
+    margin-bottom: 5%;
+
+    .tags-list {
+      display: inline-block;
+      margin: 2px 0;
+    }
+    .left-column-list {
+      padding-right: 20px;
+    }
+  }
+  .sidebar-item-form {
+    background-color: $color;
+    padding: 30px;
+    margin-bottom: 5%;
+    form {
+      .search-place, .search-btn {
+        height: 28px;
+        border: 1px solid $cream;
+        outline: none;
+        background-color: $cream;
+      }
+      .search-place {
+        width: 100%;
+        border-top-left-radius: 14px;
+        border-bottom-left-radius: 14px;
+        padding-left: 30px;
+      }
+      .search-btn {
+        border-top-right-radius: 14px;
+        border-bottom-right-radius: 14px;
+        padding-right: 30px;
+        &:before {
+          content: "\57";
+          font-family: untitled-font-1;
+          font-size: 25px;
+          color: $grey;
+        }
+      }
+    }
+  }
+
+  .sidebar-title {
+    font-size: $small;
+    font-weight: 600;
+    color: $yellow;
+    padding-bottom: 5%;
+  }
+
+  ul .arrow-list {
+    margin-bottom: 10px;
+
+    &:before {
+      content: url("../img/img-project/arrow.png");
+      @include list-style;
+    }
+
+    a {
+      @include list-link;
+      padding: 7px 0;
+      transition: color .3s linear;
+      &:hover {
+        color: $yellow;
+      }
+
+      li {
+        display: inline;
+      }
+    }
+  }
+
+  ul {
+    a {
+      @include list-link;
+      transition: color .3s linear;
+      &:hover {
+        color: $yellow;
+      }
+    }
+    .like-text {
+      font-size: $smaller;
+      color: $yellow;
+      a {
+        opacity: 0.2;
+        transition: all .3s linear;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .post-size {
+      max-width: 325px;
+    }
+    .image-list-post-one {
+      &:before {
+        content: url("../img/img-project/popular_post_img_1.png");
+        @include list-style;
+      }
+    }
+    .image-list-post-two {
+      &:before {
+        content: url("../img/img-project/popular_post_img_2.png");
+        @include list-style;
+      }
+    }
+    .image-list-post-three {
+      &:before {
+        content: url("../img/img-project/popular_post_img_3.png");
+        @include list-style;
+      }
+    }
+    .image-list-post-four {
+      &:before {
+        content: url("../img/img-project/popular_post_img_4.png");
+        @include list-style;
+      }
+    }
+    .image-list-post-five {
+      &:before {
+        content: url("../img/img-project/popular_post_img_5.png");
+        @include list-style;
+      }
+    }
+
+    .tags-style {
+      background-color: $yellow;
+      transition: color .3s linear;
+      &:hover {
+        background-color: $black;
+      }
+      a {
+        color: $color;
+        font-size: $smaller;
+        padding: 2px 10px;
+        transition: color .3s linear;
+        &:hover {
+          color: $yellow;
+        }
+      }
+    }
+  }
+}

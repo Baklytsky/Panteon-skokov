@@ -1,0 +1,150 @@
+@mixin menu-item {
+  font-weight: 400;
+  font-size: $small;
+  text-transform: uppercase;
+}
+@mixin slider-headline {
+  font-size: $smaller;
+  font-weight: 600;
+  color: $color;
+  background-color: $yellow;
+}
+@mixin slider-title {
+  font-size: $small;
+  font-weight: 500;
+  color: $white;
+  background-color: $color;
+}
+@mixin btn {
+  width: 80%;
+  color: $white;
+  background-color: $black;
+  border-bottom: 2px solid $black;
+  padding: 5px 10px;
+  margin-bottom: 30px;
+}
+@mixin design-headline {
+  font-size: $small;
+  font-weight: 600;
+  color: $color;
+  line-height: 0.6;
+}
+@mixin design-text {
+  font-size: $small;
+  color: $color;
+  padding-top: 10px;
+}
+@mixin icon-design {
+  font-size: $icon-size;
+}
+@mixin section-btn {
+  font-size: $small;
+  color: $yellow;
+  background-color: $color;
+  padding: 2px 16px;
+}
+@mixin before-btn {
+  content: "";
+  border-top: 1px solid $line;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 150%;
+}
+@mixin after-btn {
+  content: "";
+  border-top: 1px solid $line;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 150%;
+}
+@mixin slider-style {
+  width: 100%;
+  background-color: $black;
+  padding: 70% 0;
+}
+@mixin footer-headline {
+    font-size: $small;
+    font-weight: bold;
+    color: $white;
+    line-height: 1.7;
+    padding: 15px 0;
+}
+@mixin footer-text {
+  font-size: $smaller;
+  color: $white;
+  line-height: 1.7;
+}
+@mixin twitter-link {
+  color: $yellow;
+  font-weight: bold;
+}
+@mixin icon-style {
+  color: $white;
+  padding: 5px;
+  background-color: $black;
+  margin-right: 2px;
+}
+@mixin list-icon {
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  display: block;
+  padding-right: 40px;
+}
+@mixin form-style {
+  width: 200px;
+  border: none;
+  border-bottom: 2px solid $yellow;
+  background-color: $color;
+}
+@mixin list-style {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+@mixin list-link {
+  font-size: $smaller;
+  color: $white;
+  text-decoration: none;
+}
+@mixin project-headline {
+  font-size: $normal;
+  color: $yellow;
+  background-color: $color;
+  padding: 5px 10px;
+}
+@mixin statistics {
+  max-width: 486px;
+  height: 37px;
+  background-color: $color;
+  position: relative;
+}
+@mixin percent {
+  content: "";
+  display: block;
+  height: 37px;
+  background-color: $yellow;
+  position: absolute;
+  left: 45px;
+}
+@mixin professions {
+  width: 194px;
+  height: 21px;
+  font-size: $small;
+  color: $yellow;
+  background-color: $color;
+  margin-top: 250px;
+}
+@mixin circle-photo {
+  display: block;
+  width: 194px;
+  height: 194px;
+  position: absolute;
+  bottom: 30px;
+  border: 3px solid $yellow;
+  border-radius: 100%;
+  overflow: hidden;
+  transition: all .3s linear;
+}

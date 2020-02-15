@@ -1,0 +1,170 @@
+@import "mixins";
+@import "theme_variables";
+.footer {
+  background-color: $color;
+  #ctf .ctf-item {
+	padding: 3px;
+	border: none;
+  }
+  .ctf-author-box {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+  }
+  #ctf .ctf-author-box-link {
+	padding-left: 15px;
+  }
+  #ctf.ctf-narrow .ctf-tweet-content {
+	padding: 3px 0 5px 40px;
+  }
+  .ctf-corner-logo {
+	font-size: 20px !important;
+  }
+  .hvr-forward {
+	width: 30px;
+	font-size: 16px;
+	background-color: black;
+	padding: 5px;
+  }
+  .footer-headline {
+    @include footer-headline;
+  }
+  .footer-text {
+    @include footer-text;
+  }
+  .footer-btn {
+    @include btn;
+    transition: all .3s linear;
+
+    &:hover {
+      color: $yellow;
+      border-bottom: 2px solid $yellow;
+    }
+  }
+  figure {
+	padding: 0.5%;
+	margin: 0;
+	transform: scale(1);
+	transition: all .3s linear;
+	&:hover {
+	  transform: scale(0.9);
+	}
+  }
+  li {
+	padding: 5px 0;
+	.icon-style {
+	  @include icon-style;
+	}
+  }
+  .footer-facebook {
+    transition: all .3s linear;
+    &:hover {
+      background-color: $facebook;
+    }
+  }
+  .footer-google {
+    transition: all .3s linear;
+    &:hover {
+      background-color: $google;
+    }
+  }
+  .footer-twitter {
+    transition: all .3s linear;
+    &:hover {
+      background-color: $twitter;
+    }
+  }
+  .footer-linkedin {
+    transition: all .3s linear;
+    &:hover {
+      background-color: $linkedin;
+    }
+  }
+  .footer-youtube {
+    transition: all .3s linear;
+    &:hover {
+      background-color: $youtube;
+    }
+  }
+  .footer-social-blogger {
+    transition: all .3s linear;
+    &:hover {
+      background-color: $blogger;
+    }
+  }
+  .footer-rss {
+    transition: all .3s linear;
+    &:hover {
+      background-color: $green;
+    }
+  }
+  .footer-dribbble {
+    transition: all .3s linear;
+    &:hover {
+      background-color: $yellow;
+    }
+  }
+
+  .address-list {
+    &:before {
+      content: "";
+      background-image: url("../img/adress.png");
+      @include list-icon;
+    }
+  }
+  .phone-list {
+    &:before {
+      content: "";
+      background-image: url("../img/phone.png");
+      @include list-icon;
+    }
+  }
+  .mail-list {
+    &:before {
+      content: "";
+      background-image: url("../img/email.png");
+      @include list-icon;
+    }
+  }
+  .mail-link {
+    @include twitter-link;
+  }
+  .form-style {
+    @include form-style;
+  }
+  .follow-btn {
+    border: none;
+    background-color: $black;
+    padding: 0;
+    &:active, &:focus {
+      outline: none;
+    }
+    .icon-input {
+      font-size: 1.2em;
+      color: $white;
+      padding: 5px 5px 0 5px;
+      background-color: $black;
+    }
+  }
+  .footer-menu {
+    background-color: $black;
+    padding: 10px 0;
+    .footer-menu-title {
+      @include footer-text;
+      a {
+        color: $white;
+      }
+    }
+    .footer-nav {
+      padding: 5% 0;
+      a {
+        color: $white;
+        font-size: $smaller;
+		transition: all .3s linear;
+        &:hover {
+          color: $yellow;
+        }
+      }
+    }
+  }
+}
