@@ -110,7 +110,9 @@
   text-decoration: none;
 }
 @mixin project-headline {
-  font-size: $normal;
+  display: inline-block;
+  font-size: $small;
+  font-weight: 700;
   color: $yellow;
   background-color: $color;
   padding: 5px 10px;

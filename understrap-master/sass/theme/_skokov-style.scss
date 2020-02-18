@@ -32,6 +32,15 @@
 	content: " / ";
   }
 }
+.comment-reply-title {
+  font-size: $smaller;
+  font-weight: 700;
+  color: $black;
+  text-transform: uppercase;
+  &:before, &:after {
+	content: " / ";
+  }
+}
 /*--------------------------------------------------------------------------------------------------------
 ---------------------------------------------HOME---------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------*/
@@ -751,14 +760,19 @@ text-align: right;
     line-height: 2;
   }
   .share-post {
-    border-bottom: 2px solid $line;
+	border-bottom: 1px solid $line;
   }
   .share-post-headline {
     @include project-headline;
   }
   .share-icon {
-    @include icon-style;
-    font-size: $smaller;
+	font-size: $small;
+	color: $white;
+	line-height: 1.5;
+	padding: 3px 7px;
+	background-color: $black;
+	margin-right: 2px;
+
   }
   .share-facebook {
     transition: all .3s linear;
@@ -785,7 +799,8 @@ text-align: right;
     }
   }
   .share-item {
-    font-size: $smaller;
+    font-size: $small;
+	font-weight: 700;
     background-color: $yellow;
     padding: 5px 5px;
   }

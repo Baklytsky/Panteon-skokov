@@ -239,3 +239,5 @@ function home_slider () {
 
 	register_post_type( 'Slider photos', $args );
 }
+
+
