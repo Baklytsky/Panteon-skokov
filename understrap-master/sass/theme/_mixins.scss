@@ -1,3 +1,6 @@
+
+@import "theme_variables";
+
 @mixin menu-item {
   font-weight: 400;
   font-size: $small;
@@ -132,12 +135,10 @@
   left: 45px;
 }
 @mixin professions {
-  width: 194px;
-  height: 21px;
   font-size: $small;
   color: $yellow;
   background-color: $color;
-  margin-top: 250px;
+  margin: 10px 0;
 }
 @mixin circle-photo {
   display: block;

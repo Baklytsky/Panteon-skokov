@@ -11,46 +11,38 @@ defined( 'ABSPATH' ) || exit;
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="entry-header">
-
-		<?php
-		the_title(
-			sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
-			'</a></h2>'
-		);
-		?>
-
-		<?php if ( 'post' == get_post_type() ) : ?>
-
-			<div class="entry-meta">
-				<?php understrap_posted_on(); ?>
-			</div><!-- .entry-meta -->
-
-		<?php endif; ?>
-
-	</header><!-- .entry-header -->
-
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
-
-	<div class="entry-content">
-
-		<?php the_excerpt(); ?>
-
-		<?php
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-
-		<?php understrap_entry_footer(); ?>
-
-	</footer><!-- .entry-footer -->
-
+	<a href="<?php echo get_the_permalink( $post->ID ); ?>">
+		<picture>
+			<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+		</picture>
+	</a>
+	<div class="card-body news">
+		<h3 class="card-title news-headline text-uppercase">
+			<a href="<?php echo get_the_permalink( $post->ID ); ?>" class="news-link">
+				<?php echo get_the_title( $post->ID ); ?>
+			</a>
+		</h3>
+		<p class="card-text news-text">
+			<?= get_the_excerpt(); ?>
+		</p>
+		<footer class="d-flex justify-content-between align-items-center pt-3">
+			<a href="#" aria-label="heart">
+				<span class="icon-heart card-heart"><?php echo '  '.$post->ID; ?></span>
+			</a>
+			<span class="footer-card-text text-right">
+				<a href="#" class="footer-card-link">
+					<?= __( 'by', 'understrap' ); ?> <?= get_the_author(); ?>
+					<span class="comments-count">
+						<?php echo get_comments_number( $post->ID ) . ' ';
+						comments_number( $zero = 'comments', $one = 'comment', $more = 'comments', $deprecated = '' );?>
+					</span>
+					<?php
+					$d = 'M. j Y';
+					$t = 'Y-m-d';
+					?>
+					<time datetime="<?= get_the_date( $t ); ?>"><?= get_the_date( $d, $post->ID ); ?></time>
+				</a>
+			</span>
+		</footer>
+	</div>
 </article><!-- #post-## -->

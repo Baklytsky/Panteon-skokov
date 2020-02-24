@@ -61,7 +61,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								<li>
 									<a href="tel:<?= $contacts['link']['Phone_1'] ?>" class="footer-text">
 										<?= __('Phone:','understrap') ?>
-										<?= $contacts['link']['Phone'] ?>
+										<?= $contacts['link']['Phone_1'] ?>
 									</a>
 								</li>
 								<li class="text-right">

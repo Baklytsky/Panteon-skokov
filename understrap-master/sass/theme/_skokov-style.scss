@@ -4,7 +4,7 @@
   width: 100%;
 }
 .post {
-  margin-top: 50px;
+  //margin-bottom: 50px;
 }
 .entry-header {
   background-color: $yellow;
@@ -347,10 +347,10 @@
 .portfolio-list {
   padding: 2% 0;
 
-  .portfolio-item {
+  #portfolio-item {
     border: 10px solid $cream;
     border-bottom: 50px solid $cream;
-    .photo {
+    img {
       width: 100%;
     }
     .portfolio-layer {
@@ -380,12 +380,116 @@
           color: $white;
           background-color: $color;
           padding: 30px;
+		  cursor: pointer;
         }
       }
     }
     &:hover .portfolio-layer {
       opacity: 0.7;
     }
+  }
+}
+
+.lightbox-gallery {
+  width: 100%;
+  height: 100vh;
+  display: none;
+  .lightbox {
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000000CC;
+	padding: 15px;
+	animation: bounce-in-top 1.1s both;
+	@keyframes bounce-in-top {
+	  0% {
+		transform: translateY(-500px);
+		animation-timing-function: ease-in;
+		opacity: 0;
+	  }
+	  38% {
+		transform: translateY(0);
+		animation-timing-function: ease-out;
+		opacity: 1;
+	  }
+	  55% {
+		transform: translateY(-65px);
+		animation-timing-function: ease-in;
+	  }
+	  72% {
+		transform: translateY(0);
+		animation-timing-function: ease-out;
+	  }
+	  81% {
+		transform: translateY(-28px);
+		animation-timing-function: ease-in;
+	  }
+	  90% {
+		transform: translateY(0);
+		animation-timing-function: ease-out;
+	  }
+	  95% {
+		transform: translateY(-8px);
+		animation-timing-function: ease-in;
+	  }
+	  100% {
+		transform: translateY(0);
+		animation-timing-function: ease-out;
+	  }
+	}
+
+	.lightbox-icons {
+	  font-size: $big;
+	  color: $white;
+	  opacity: 0.5;
+	  cursor: pointer;
+	  transition: all .3s linear;
+
+	  &:hover {
+		opacity: 1;
+	  }
+	}
+
+	.lightbox-images {
+	  position: relative;
+	}
+
+	.prev {
+	  position: absolute;
+	  left: 4%;
+	  top: 50%;
+	}
+
+	.next {
+	  position: absolute;
+	  right: 4%;
+	  top: 50%;
+	}
+
+	.close {
+	  position: absolute;
+	  right: 0;
+	  top: -5%;
+	}
+
+	.lightbox-info span {
+	  color: $white;
+	}
+
+	.lightbox-item {
+	  width: auto;
+	  height: auto;
+	  max-width: 100%;
+	  max-height: 600px;
+	  box-shadow: -20px 20px 0 -17px $white,
+	  20px -20px 0 -17px $white,
+	  20px 20px 0 -20px $black,
+	  0 0 0 2px $black;
+	  transition: all .5s linear;
+	}
   }
 }
 
@@ -526,7 +630,6 @@
   .grid {
     .grid-sizer, .grid-item {
       width: 100%;
-      border-bottom: 15px solid $cream;
     }
     .gutter-sizer {
       width: 0;
@@ -545,6 +648,9 @@
       color: $google;
     }
   }
+  .news .understrap-read-more-link {
+	  display: none;
+	}
   .news {
     background-color: $yellow;
     position: relative;
@@ -899,6 +1005,9 @@ text-align: right;
     font-size: $smaller2;
     font-weight: 700;
   }
+  .column {
+	column-count: 1;
+  }
   .about-text {
     font-size: $smaller2;
     font-weight: 400;
@@ -913,12 +1022,8 @@ text-align: right;
   .skills-text {
     font-size: $small;
   }
-  .statistics-photoshop {
+  .statistics {
     @include statistics;
-    &:after {
-      @include percent;
-      width: calc(90% - 45px);
-    }
   }
   .percent {
     font-size: $smaller;
@@ -929,62 +1034,22 @@ text-align: right;
     top: 0;
     left: 0;
   }
+  .percent-scale {
+	max-width: 441px;
+	background-color: $yellow;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 45px;
+  }
   .percent-item {
     font-size: $small;
     color: $color;
+	position: absolute;
+	top: 50%;
+	left: 15px;
+	transform: translateY(-50%);
     z-index: 1;
-    position: absolute;
-    top: 9px;
-    left: 55px;
-  }
-  .statistics-html {
-    @include statistics;
-    &:after {
-      @include percent;
-      width: calc(87% - 45px);
-    }
-  }
-  .statistics-Illustrator {
-    @include statistics;
-    &:after {
-      @include percent;
-      width: calc(80% - 45px);
-    }
-  }
-  .statistics-php {
-    @include statistics;
-    &:after {
-      @include percent;
-      width: calc(76% - 45px);
-    }
-  }
-  .statistics-wordpress {
-    @include statistics;
-    &:after {
-      @include percent;
-      width: calc(70% - 45px);
-    }
-  }
-  .statistics-joomla {
-    @include statistics;
-    &:after {
-      @include percent;
-      width: calc(65% - 45px);
-    }
-  }
-  .statistics-javascript {
-    @include statistics;
-    &:after {
-      @include percent;
-      width: calc(75% - 45px);
-    }
-  }
-  .statistics-mysql {
-    @include statistics;
-    &:after {
-      @include percent;
-      width: calc(85% - 45px);
-    }
   }
 }
 .our-team {
@@ -1000,83 +1065,45 @@ text-align: right;
   .professions {
     @include professions;
     transition: all .3s linear;
-    &:hover {
-      background-color: $black;
-    }
   }
-
-  .web-designer {
-    &:after {
-      content: url("../img/img-about/photo_1.png");
-      @include circle-photo;
-    }
-    &:hover:after {
-      box-shadow: 0 0 8px 2px $black;
-    }
+	img {
+	  display: block;
+	  width: 194px;
+	  height: 194px;
+	  border: 3px solid $yellow;
+	  border-radius: 100%;
+	  overflow: hidden;
+	  transition: all .3s linear;
+	}
+  .personal-link {
+	&:hover {
+	  .professions {
+		background-color: $black;
+	  }
+	  img {
+		box-shadow: 0 0 8px 2px $black;
+	  }
+	}
   }
-
-  .web-designer-second {
-    &:after {
-      content: url("../img/img-about/photo_2.png");
-      @include circle-photo;
-    }
-    &:hover:after {
-      box-shadow: 0 0 8px 2px $black;
-    }
+  .form-cv-img {
+	input {
+	  display: none;
+	}
+	cursor: pointer;
+	&:hover {
+	  opacity: 0.8;
+	}
   }
-  .front-end-developer {
-    &:after {
-      content: url("../img/img-about/photo_3.png");
-      @include circle-photo;
-    }
-    &:hover:after {
-      box-shadow: 0 0 8px 2px $black;
-    }
-  }
-  .web-developer {
-    &:after {
-      content: url("../img/img-about/photo_4.png");
-      @include circle-photo;
-    }
-    &:hover:after {
-      box-shadow: 0 0 8px 2px $black;
-    }
-  }
-  .web-developer-second {
-    &:after {
-      content: url("../img/img-about/photo_5.png");
-      @include circle-photo;
-    }
-    &:hover:after {
-      box-shadow: 0 0 8px 2px $black;
-    }
-  }
-  .markup-developer {
-    &:after {
-      content: url("../img/img-about/photo_6.png");
-      @include circle-photo;
-    }
-    &:hover:after {
-      box-shadow: 0 0 8px 2px $black;
-    }
-  }
-  .cms-master {
-    &:after {
-      content: url("../img/img-about/photo_7.png");
-      @include circle-photo;
-    }
-    &:hover:after {
-      box-shadow: 0 0 8px 2px $black;
-    }
-  }
-  .send-cv {
-    &:after {
-      content: url("../img/img-about/photo_8.png");
-      @include circle-photo;
-    }
-    &:hover:after {
-      box-shadow: 0 0 8px 2px $black;
-    }
+  .btn-send {
+	width: 194px;
+	@include professions;
+	margin: 8px 0;
+	border: none;
+	overflow: hidden;
+	transition: all .3s linear;
+	&:hover {
+		background-color: $black;
+	  }
   }
 }
 /*--------------------------------------------------------------------------------------------------------

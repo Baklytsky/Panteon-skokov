@@ -1,23 +1,84 @@
 @import "mixins";
 @import "theme_variables";
-aside {
+.widget_archive ul li, .widget_recent_entries ul li {
+  display: flex;
+  align-items: center;
+  &:before {
+	content: url("../img/img-project/arrow.png");
+	@include list-style;
+  }
+}
+
+.widget_archive ul, .widget_categories ul {
+  list-style-position: inside;
+  column-count: 2;
+}
+
+.widget_search {
+  form {
+	.form-control {
+	  border-top-left-radius: 19px;
+	  border-bottom-left-radius: 19px;
+	  padding-left: 30px;
+	  background-color: $cream;
+	  outline: none;
+	}
+	.submit {
+	  color: $cream;
+	  border: 1px solid $cream;
+	  border-top-right-radius: 19px;
+	  border-bottom-right-radius: 19px;
+	  background-color: $cream;
+	  outline: none;
+	}
+	.input-group-append {
+	  position: relative;
+	  &:before {
+		content: "\57";
+		font-family: untitled-font-1, sans-serif;
+		color: $color;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 10;
+	  }
+	}
+  }
+}
+
+.aside {
   .sidebar-item {
     background-color: $color;
     padding: 30px 10px 20px 30px;
     margin-bottom: 5%;
 
-    .tags-list {
-      display: inline-block;
+    .tag-cloud-link {
+	  font-size: $smaller !important;
+	  text-transform: uppercase;
+	  color: $color;
+	  background-color: $yellow;
+	  display: inline-block;
+	  padding: 5px 3px;
       margin: 2px 0;
+	  transition: color .3s linear;
+	  &:hover {
+		color: $yellow;
+		background-color: $black;
+	  }
     }
-    .left-column-list {
-      padding-right: 20px;
-    }
+	ul li a {
+	  text-transform: uppercase;
+	}
+	.cat-item {
+	  display: flex;
+	  align-items: center;
+	  &:before {
+		content: url("../img/img-project/arrow.png");
+		@include list-style;
+	  }
+	}
   }
-  .sidebar-item-form {
-    background-color: $color;
-    padding: 30px;
-    margin-bottom: 5%;
     form {
       .search-place, .search-btn {
         height: 28px;
@@ -37,13 +98,13 @@ aside {
         padding-right: 30px;
         &:before {
           content: "\57";
-          font-family: untitled-font-1;
+          font-family: untitled-font-1, sans-serif;
           font-size: 25px;
           color: $grey;
         }
       }
     }
-  }
+
 
   .sidebar-title {
     font-size: $small;

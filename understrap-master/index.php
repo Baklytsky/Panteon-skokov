@@ -17,15 +17,24 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 
 $container = get_theme_mod( 'understrap_container_type' );
+//echo esc_attr( $container );
 ?>
 
 <?php if ( is_front_page() && is_home() ) : ?>
 	<?php get_template_part( 'global-templates/hero' ); ?>
 <?php endif; ?>
 
-<div class="wrapper" id="index-wrapper">
+	<section class="section-headline-blog container-fluid indent indent mb-5">
+		<div class="container text-center text-md-left">
+			<h2>
+				<span class="headline d-inline-block text-uppercase"><?= __('Blog', 'understrap'); ?></span>
+			</h2>
+		</div>
+	</section>
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+<div class="blog container-fluid" id="index-wrapper">
+
+	<div class="" id="content" tabindex="-1">
 
 		<div class="row">
 
@@ -35,10 +44,22 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<main class="site-main" id="main">
 
 				<?php if ( have_posts() ) : ?>
-
-					<?php /* Start the Loop */ ?>
-
-					<?php while ( have_posts() ) : the_post(); ?>
+				<ul class="grid">
+					<li class="grid-sizer"></li>
+					<li class="gutter-sizer"></li>
+					<li class="card card-item grid-item mb-3">
+						<h2 class="blog-headline">
+							<a href="#" class="quote-link">
+								<q>Ability may get you to the top, but it takes character to keep you there.</q>
+							</a>
+							<span class="text-right d-block">
+                            <a href="#" class="footer-card-link"><cite title="John Wooden">John Wooden</cite></a>
+                        </span>
+						</h2>
+					</li>
+					<?php while ( have_posts() ) :
+					the_post(); ?>
+					<li class="card card-item grid-item mb-3">
 
 						<?php
 
@@ -50,13 +71,16 @@ $container = get_theme_mod( 'understrap_container_type' );
 						get_template_part( 'loop-templates/content', get_post_format() );
 						?>
 
-					<?php endwhile; ?>
+						<?php endwhile; ?>
 
-				<?php else : ?>
+						<?php else : ?>
 
-					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
+							<?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
-				<?php endif; ?>
+						<?php endif; ?>
+					</li>
+
+				</ul>
 
 			</main><!-- #main -->
 

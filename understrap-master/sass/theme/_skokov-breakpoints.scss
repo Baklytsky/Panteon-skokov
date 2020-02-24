@@ -205,6 +205,11 @@
       }
     }
   }
+  .about {
+	.column {
+	  column-count: 2;
+	}
+  }
   .section-headline-about {
     padding: 2% 0;
     h2 .headline {
@@ -397,11 +402,7 @@
         font-size: $smaller;
       }
     }
-    .grid {
-      .grid-sizer, .grid-item {
-        border-bottom: 30px solid $cream;
-      }
-    }
+
     .page-style {
       font-size: $normal;
       padding: 5px 10px;
@@ -428,7 +429,6 @@
     .about-headline {
       font-size: $big;
     }
-
     .about-subtitle {
       font-size: $smaller2;
     }
@@ -448,7 +448,7 @@
 }
 
 @media (min-width: 1600px) {
-  aside {
+  .aside {
     .sidebar-item {
       .left-column-list {
         padding-right: 40px;

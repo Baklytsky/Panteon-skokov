@@ -11,16 +11,16 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
-	<section class="section-headline-blog container-fluid indent">
+	<section class="section-headline-blog container-fluid indent mb-5">
 		<div class="container text-center text-md-left">
 			<h2>
 				<span class="headline d-inline-block text-uppercase"><?= __('Blog', 'understrap'); ?></span>
 			</h2>
 		</div>
 	</section>
-<div class="wrapper" id="single-wrapper">
+<div class="container-fluid px-5" id="single-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+<!--	<div class="--><?php //echo esc_attr( $container ); ?><!--" id="content" tabindex="-1">-->
 
 		<div class="row">
 
@@ -49,7 +49,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		</div><!-- .row -->
 
-	</div><!-- #content -->
+<!--	</div><!-- #content -->-->
 
 </div><!-- #single-wrapper -->
 
